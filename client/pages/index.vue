@@ -1,6 +1,8 @@
 <template>
-  <h1>Главная страница</h1>
-  
+  <v-container style="height: 1000px;">
+    <h1>Главная страница</h1>
+  </v-container>
+    
 </template>
 
 <script>

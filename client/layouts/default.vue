@@ -3,9 +3,11 @@
   <my-header/>
 
   <v-main >
-    <v-container >
-      <Nuxt />
-    </v-container>
+    <v-card class="overflow-hidden">
+      <v-container >
+        <Nuxt />
+      </v-container>
+    </v-card>
   </v-main>
 
   <my-footer/>
