@@ -1,12 +1,26 @@
 <template>
 <section>
-  <v-app-bar app  >
-    <NuxtLink to="/">
-      <img src="@/static/img/logo3.jpg" alt="">
-    </NuxtLink>
+  <v-app-bar app class="d-flex  flex-column" >
+    
+      <div  >
+        <NuxtLink to="/">
+          <img src="@/static/img/logo3.jpg" alt="">
+        </NuxtLink>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-lg-and-up"></v-app-bar-nav-icon>
+      </div>
+    
+    
+      
+        <nav class="hidden-md-and-down">
+          <v-tabs>
+            <v-tab v-for="(link, i ) in links" :key="i" router :to="link.route">
+              {{ link.text }}
+            </v-tab>
+          </v-tabs>
+        </nav>
+      
 
-    <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-lg-and-up"></v-app-bar-nav-icon>
-
+    
     
     
   </v-app-bar>
