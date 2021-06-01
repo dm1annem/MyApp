@@ -1,30 +1,34 @@
 <template>
 <section>
-  <v-app-bar app >
+  <v-app-bar app  >
     <NuxtLink to="/">
       <img src="@/static/img/logo3.jpg" alt="">
     </NuxtLink>
 
     <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-lg-and-up"></v-app-bar-nav-icon>
+
+    
     
   </v-app-bar>
   
   <v-navigation-drawer
     v-model="drawer"
-    absolute
+    app
     temporary
-    >
-    <v-list>
-      <v-list-tile v-for="link in links" :key="link.text">
-        <v-list-tile-action>
-          <v-icon> {{ link.icon }} </v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>
-            {{ link.text }}
-          </v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
+    
+  >
+    <v-system-bar></v-system-bar>
+    <v-list nav dance>
+      <v-list-item-group @click.stop="drawer = !drawer"  color="primary">
+        <v-list-item  v-for="(link, i ) in links" :key="i" router :to="link.route" >
+          <v-list-item-action >
+            <v-icon v-text="link.icon"></v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title v-text="link.text"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>    
     </v-list>
   
   </v-navigation-drawer>
@@ -36,10 +40,14 @@
 export default {
   data() {
     return {
-      drawer: false,
+      drawer: true,
       links: [
-        {icon:'mdi-home', text:'Главная страница', route: '/'},
-        {icon:'mdi-home', text:'Проекты', route: '/'},
+        {icon:'mdi-home', text:'Главная', route: '/'},
+        {icon:'mdi-home-group', text:'Проекты', route: '/main/projects'},
+        {icon:'mdi-saw-blade', text:'Примеры работы', route: '/main/examples'},
+        {icon:'mdi-account-star', text:'Отзывы клиентов', route: '/main/reviews'},
+        {icon:'mdi-currency-rub', text:'Цены', route: '/main/other/prise'},
+        {icon:'mdi-map-marker-radius', text:'Контакты', route: '/main/other/contacts'},
       ],
     }
   },

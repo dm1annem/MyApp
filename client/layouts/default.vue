@@ -3,7 +3,7 @@
   <my-header/>
 
   <v-main >
-    <v-card class="overflow-hidden">
+    <v-card flat>
       <v-container >
         <Nuxt />
       </v-container>
