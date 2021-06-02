@@ -1,24 +1,25 @@
 <template>
 <section>
-  <v-app-bar app class="d-flex  flex-column" >
-    
-      <div  >
+  <v-app-bar app height="auto" >
+    <div class="d-flex  flex-column">
+      <div  class="d-flex justify-space-between ">
         <NuxtLink to="/">
           <img src="@/static/img/logo3.jpg" alt="">
         </NuxtLink>
+        
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-lg-and-up"></v-app-bar-nav-icon>
       </div>
     
     
       
-        <nav class="hidden-md-and-down">
-          <v-tabs>
-            <v-tab v-for="(link, i ) in links" :key="i" router :to="link.route">
-              {{ link.text }}
-            </v-tab>
-          </v-tabs>
-        </nav>
-      
+      <nav class="flex-column hidden-md-and-down">
+        <v-tabs>
+          <v-tab v-for="(link, i ) in links" :key="i" router :to="link.route">
+            {{ link.text }}
+          </v-tab>
+        </v-tabs>
+      </nav>
+    </div>  
 
     
     
@@ -54,7 +55,7 @@
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: false,
       links: [
         {icon:'mdi-home', text:'Главная', route: '/'},
         {icon:'mdi-home-group', text:'Проекты', route: '/main/projects'},
