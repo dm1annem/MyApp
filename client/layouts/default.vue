@@ -1,5 +1,6 @@
 <template>
-<v-app>
+<v-app >
+    
   <my-header/>
 
   <v-main >
@@ -9,7 +10,7 @@
       </v-container>
     </v-card>
   </v-main>
-
+  
   <my-footer/>
 </v-app>
 </template>

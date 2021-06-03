@@ -1,6 +1,7 @@
 <template>
-  <v-container style="min-height: 80vh;">
+  <v-container >
     <h1>Главная страница</h1>
+    <div class="qw"></div>
   </v-container>
     
 </template>
@@ -13,3 +14,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.qw{
+  height: 1000px;
+  background-color: gray;
+}
+</style>
